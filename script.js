@@ -6,6 +6,9 @@ let shuffledQuestions, currentQuestionIndex
 const nextButton = document.getElementById('next-btn');
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const startingMinutes = 10;
+let time = startingMinutes * 60;
+const constcountdownEl = document.getElementById('countdown');
 
 
 startButton.addEventListener('click', startGame)
@@ -13,6 +16,16 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    constcountdownEl.innerHTML = `${minutes}:${seconds}`;
+    time--;
+}
 
 function startGame() {
     // console.log('Game Started')
@@ -88,19 +101,39 @@ function selectAnswer(event) {
 
     const questions = [
         {
-            question: 'What is 2 + 2?',
+            question: 'A _____ is an object that waits for an event to occur and respond in some way when it does.',
             answers: [
-                { text: '4', correct: true },
-                { text: '22', correct: false },
+                { text: 'GUI', correct: false },
+                { text: 'component', correct: false },
+                { text: 'event', correct: false },
+                { text: 'listener', correct: true }
             ]
         },
         {
-            question: 'Who is the best?',
+            question: 'How many days are in a year?',
             answers: [
-                { text: 'tony hawk', correct: true },
-                { text: 'randy savage', correct: false },
-                { text: 'dre day', correct: false },
-                { text: 'young boy', correct: false }
+                { text: '486', correct: false },
+                { text: '542', correct: false },
+                { text: '365', correct: true },
+                { text: '10,000', correct: false }
+            ]
+        },
+        {
+            question: 'When year was the first Moon landing?',
+            answers: [
+                { text: '2002', correct: false },
+                { text: '1842', correct: false },
+                { text: '1969', correct: true },
+                { text: '200 B.C.', correct: false }
+            ]
+        },
+        {
+            question: 'How many squares of toilet tissue on a roll?',
+            answers: [
+                { text: '1500', correct: false },
+                { text: '1000', correct: true },
+                { text: '1850', correct: false },
+                { text: '742', correct: false }
             ]
         }
     ]
