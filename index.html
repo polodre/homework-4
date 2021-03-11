@@ -7,10 +7,30 @@
     <title>Are you ready to play a game?</title>
   </head>
   <body>
-    <button id="start">Start Quiz</button>
+    <div class="container">
+      <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+          </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start Quiz</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
 
-    <div id="quizArea"></div>
-    <div id="quizChoice"></div>
+    <!-- <button id="start">Start Quiz</button>
+
+        answer-buttons
+
+    <div id="quizArea">This is the Question</div>
+    <div id="quizChoice">These are your choices</div>
+
+    <button id="goToNext">Go To Next Question</button> -->
+    <!-- <button id="start-btn" class="start-btn btn">Start Quiz</button> -->
 
     <script src="script.js"></script>
   </body>
