@@ -51,7 +51,7 @@ body.wrong {
 }
 
 .btn:hover {
-  border-color: black;
+  border-color: rgb(216, 10, 10);
 }
 
 .btn.correct {
