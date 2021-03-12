@@ -7,7 +7,7 @@ const nextButton = document.getElementById('next-btn');
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const startingMinutes = 10;
-let time = startingMinutes * 60;
+let time = startingMinutes * 1;
 const constcountdownEl = document.getElementById('countdown');
 
 
@@ -19,13 +19,18 @@ nextButton.addEventListener('click', () => {
 
 setInterval(updateCountdown, 1000);
 
+
+
 function updateCountdown() {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    const minutes = Math.floor(time / 20);
+    let seconds = time % 10;
     seconds = seconds < 10 ? '0' + seconds : seconds;
-    constcountdownEl.innerHTML = `${minutes}:${seconds}`;
+    constcountdownEl.innerHTML = `${seconds}`;
     time--;
+    clearInterval(countdown);
+    i.innerHTML = parseInt(i.innerHTML)-1;
 }
+
 
 function startGame() {
     // console.log('Game Started')
@@ -64,6 +69,12 @@ function resetState() {
     }
 }
 
+//make a counter
+function timeStop(){
+    clearInterval(timer);
+    incorrect++;
+    nextQuestion();
+}
 
 
 function selectAnswer(event) {
@@ -81,7 +92,6 @@ function selectAnswer(event) {
         startButton.classList.remove('hide')
     }
 }
-    
 
 
 
