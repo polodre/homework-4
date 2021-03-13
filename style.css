@@ -1,3 +1,15 @@
 .navbar-container {
   max-width: none;
 }
+
+* {
+  font-family: "Akaya Telivigala", cursive;
+  font-family: "DotGothic16", sans-serif;
+  font-family: "Fascinate", cursive;
+  font-family: "Syne Mono", monospace;
+}
+
+/* .landing-container,
+.container {
+  background-color: yellow;
+} */
